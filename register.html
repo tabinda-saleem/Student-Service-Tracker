@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,34 +31,45 @@
                                 <label for="registerEmail" class="form-label">Email Address</label>
                                 <input type="email" id="registerEmail" class="form-control" placeholder="Enter your email" required>
                             </div>
-                            <div class="row g-3 mb-3">
-                                <div class="col-md-6">
-                                    <label for="registerStudentId" class="form-label">Student ID</label>
-                                    <input type="text" id="registerStudentId" class="form-control" placeholder="e.g. 24CS111" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="registerPhone" class="form-label">Phone</label>
-                                    <input type="tel" id="registerPhone" class="form-control" placeholder="Enter your phone number" required>
-                                </div>
+                            <div class="mb-3">
+                                <label for="registerRole" class="form-label">Register As</label>
+                                <select id="registerRole" class="form-select" required>
+                                    <option value="">Select your role</option>
+                                    <option value="student">Student</option>
+                                    <option value="staff">Staff</option>
+                                    <option value="admin">Admin</option>
+                                </select>
                             </div>
-                            <div class="row g-3 mb-3">
-                                <div class="col-md-8">
-                                    <label for="registerDepartment" class="form-label">Department</label>
-                                    <select id="registerDepartment" class="form-select" required>
-                                        <option value="">Choose your department</option>
-                                        <option>Computer System Engineering</option>
-                                        <option>Electrical Engineering</option>
-                                        <option>Mechanical Engineering</option>
-                                        <option>Other</option>
-                                    </select>
+                            <div id="studentDetails" style="display:none;">
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-6">
+                                        <label for="registerStudentId" class="form-label">Student ID</label>
+                                        <input type="text" id="registerStudentId" class="form-control" placeholder="e.g. 24CS111">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="registerPhone" class="form-label">Phone</label>
+                                        <input type="tel" id="registerPhone" class="form-control" placeholder="Enter your phone number">
+                                    </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <label for="registerSemester" class="form-label">Semester</label>
-                                    <select id="registerSemester" class="form-select" required>
-                                        <option value="">Select</option>
-                                        <option>1</option><option>2</option><option>3</option><option>4</option>
-                                        <option>5</option><option>6</option><option>7</option><option>8</option>
-                                    </select>
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-8">
+                                        <label for="registerDepartment" class="form-label">Department</label>
+                                        <select id="registerDepartment" class="form-select">
+                                            <option value="">Choose your department</option>
+                                            <option>Computer System Engineering</option>
+                                            <option>Electrical Engineering</option>
+                                            <option>Mechanical Engineering</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="registerSemester" class="form-label">Semester</label>
+                                        <select id="registerSemester" class="form-select">
+                                            <option value="">Select</option>
+                                            <option>1</option><option>2</option><option>3</option><option>4</option>
+                                            <option>5</option><option>6</option><option>7</option><option>8</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <div class="mb-3">
@@ -78,6 +90,21 @@
             </div>
         </div>
     </main>
+    <script>
+        const roleSelect = document.getElementById("registerRole");
+        const studentDetails = document.getElementById("studentDetails");
+        const studentFields = studentDetails.querySelectorAll("input, select");
+
+        roleSelect.addEventListener("change", function() {
+            const isStudent = this.value === "student";
+            studentDetails.style.display = isStudent ? "block" : "none";
+            studentFields.forEach(field => {
+                field.required = isStudent;
+                if (!isStudent) field.value = "";
+            });
+        });
+    </script>
     <script src="js/auth.js"></script>
 </body>
 </html>
+
