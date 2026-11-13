@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Student Service Tracker</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+<div class="container">
+<a class="navbar-brand" href="index.html"> Student<span class="brand-accent">ServiceTracker</span></a>
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="nav">
+<ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+<li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+<li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+<li class="nav-item"><a class="btn btn-primary btn-sm" href="register.html">Get Started</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<main>
+<section class="page-hero"><div class="container"><span class="eyebrow">WE ARE HERE TO HELP</span><h1>Let's get your <span class="gradient-text">questions answered.</span></h1><p>Send a message using the form below or check the frequently asked questions.</p></div></section>
+<section class="container section">
+<div class="row g-4">
+<div class="col-lg-5"><div class="contact-info-panel h-100"><span class="eyebrow">CONTACT SUPPORT</span><h2>How can we help?</h2><p>For specific service requirements or processing times, contact your university's relevant office.</p>
+<div class="contact-item"><div class="contact-symbol">☎</div><div><strong>Helpdesk</strong><p>Student Service Helpdesk, Administration Building, Ground Floor</p></div></div>
+<div class="contact-item"><div class="contact-symbol purple">✉</div><div><strong>Email</strong><p>helpdesk@university.edu</p></div></div>
+<div class="contact-item"><div class="contact-symbol teal">✆</div><div><strong>Phone</strong><p>+00 000 0000000</p></div></div>
+<div class="contact-item"><div class="contact-symbol">◷</div><div><strong>Office Hours</strong><p>Monday to Friday, 9:00 AM to 4:00 PM<br>Closed on weekends and public holidays</p></div></div>
+</div></div>
+<div class="col-lg-7"><div class="content-panel"><h2>Send a Message</h2><p>Fill in your details and submit your message.</p>
+<div id="contactAlert" class="alert d-none" role="status"></div>
+<form id="contactForm">
+<div class="row g-3">
+<div class="col-md-6"><label class="form-label" for="name">Full Name</label><input class="form-control" id="name" name="name" placeholder="Your name" required></div>
+<div class="col-md-6"><label class="form-label" for="email">Email Address</label><input class="form-control" id="email" name="email" type="email" placeholder="you@example.com" required></div>
+<div class="col-12"><label class="form-label" for="subject">Subject</label><select class="form-select" id="subject" name="subject" required><option value="">Choose a subject</option><option>Service Question</option><option>Request Tracking</option><option>Technical Issue</option><option>Other</option></select></div>
+<div class="col-12"><label class="form-label" for="message">Message</label><textarea class="form-control" id="message" name="message" rows="5" placeholder="Write your message..." required></textarea></div>
+<div class="col-12"><button class="btn btn-primary" type="submit">Send Message →</button></div>
+</div>
+</form>
+</div></div>
+</div>
+<div class="section-heading mt-5"><span class="eyebrow">DEPARTMENT CONTACTS</span><h2>Reach the <span class="gradient-text">right office.</span></h2></div>
+<div class="row g-4">
+<div class="col-md-4"><div class="card service-card h-100"><div class="service-icon">▤</div><h3>Examination Office</h3><p>Transcripts, degree verification and certificates.</p><p class="mb-0">exam@university.edu<br>Ext. 101</p></div></div>
+<div class="col-md-4"><div class="card service-card h-100"><div class="service-icon purple">◈</div><h3>Student Affairs</h3><p>ID cards, bonafide certificates and record updates.</p><p class="mb-0">affairs@university.edu<br>Ext. 102</p></div></div>
+<div class="col-md-4"><div class="card service-card h-100"><div class="service-icon teal">⌂</div><h3>Computer System Engineering</h3><p>Department-level academic questions.</p><p class="mb-0">cse@university.edu<br>Ext. 201</p></div></div>
+</div>
+<div class="section-heading mt-5"><span class="eyebrow">QUICK ANSWERS</span><h2>Frequently asked <span class="gradient-text">questions.</span></h2></div>
+<div class="accordion faq-accordion" id="faq">
+<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">How do I submit a service request?</button></h3><div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faq"><div class="accordion-body">Register or log in, then select the service you need in the student area.</div></div></div>
+<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Can I track my request?</button></h3><div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">The planned student module allows users to check request status and updates.</div></div></div>
+<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Does this form send a real email?</button></h3><div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">No. This front-end prototype displays a demo confirmation and does not send an email.</div></div></div>
+</div>
+</section>
+</main>
+<footer><div class="container footer-content"><div><a class="navbar-brand" href="index.html">Student<span class="brand-accent">Track</span></a><p>University services, made simple.</p></div><div class="footer-links"><a href="services.html">Services</a><a href="about.html">About</a><a href="contact.html">Contact</a></div><span>© <span id="year"></span> Student Service Tracker</span></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
